@@ -1,0 +1,26 @@
+server: 
+  port: 9000
+  servlet:
+    context-path:
+      /api-biblioteca-spring-jpa-oauth2-jwt-server
+      
+security:
+  jwt:
+    key-store: classpath:keystore.jks
+    key-store-password: letmein
+    key-pair-alias: mytestkey
+    key-pair-password: changeme
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+        
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/security
+    username: root
+    password:

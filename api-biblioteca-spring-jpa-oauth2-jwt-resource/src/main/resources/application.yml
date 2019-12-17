@@ -1,0 +1,22 @@
+server:
+  port: 9100
+  servlet:
+    context-path:
+      /api-biblioteca-spring-jpa-oauth2-jwt-resource
+security:
+  jwt:
+    public-key: classpath:public.txt
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+        
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/biblioteca
+    username: root
+    password:      
